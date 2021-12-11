@@ -17,7 +17,6 @@ Future<void> main() async {
       description: 'My Location...');
   await Workmanager().initialize(
     updatePositionInBackground,
-    isInDebugMode: false,
   );
   await Workmanager().registerPeriodicTask(
       "1",
