@@ -8,37 +8,19 @@ import 'package:workmanager/workmanager.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  NotificationController notificationController =
-      Get.put(NotificationController());
-  await notificationController.initialize();
-  notificationController.createChannel(
-      id: 'user-location',
-      name: 'User Location',
-      description: 'My Location...');
-  await Workmanager().initialize(
-    updatePositionInBackground,
-  );
-  await Workmanager().registerPeriodicTask(
-      "1",
-      "locationPeriodicTask",
-    );
+  // 1. TO DO: Crea el controlador de notificaciones e inicializa el pluggin
+
+  // 2. TO DO: 
+  // Crea el canal para notificaciones 
+  // notificationController.createChannel();
+
+  // 4. TO DO:
+  // Inicializa el Workmanager con el metodo creado y registra la tarea periodica
+  
   runApp(const App());
 }
 
-void updatePositionInBackground() async {
-  final manager = LocationManager();
-  final _manager = NotificationManager();
-  Workmanager().executeTask((task, inputData) async {
-    await _manager.initialize();
-    final _channel = _manager.createChannel(
-        id: 'user-location',
-        name: 'User Location',
-        description: 'My Location...');
-    final position = await manager.getCurrentLocation();
-    _manager.showNotification(
-        channel: _channel,
-        title: 'Tu ubicación es...',
-        body: 'Latitud ${position.latitude} - Longitud: ${position.longitude}');
-    return Future.value(true);
-  });
-}
+// 3. TO DO:
+// Crea un metodo que cree una tarea, obtenga la ubicación 
+// y la muestre en una notificación
+// void updatePositionInBackground() async {}

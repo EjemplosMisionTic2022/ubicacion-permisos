@@ -7,15 +7,16 @@ class NotificationController extends GetxController {
   final _manager = NotificationManager();
   late NotificationDetails  _channel;
 
-  initialize() async {
-    await _manager.initialize();
-  }
+  // TODO
+  //Inicializa el pluggin de notificaciones
+  // initialize() async {
+  // }
 
-  createChannel(
-      {required String id, required String name, required String description}) {
-    _channel =
-        _manager.createChannel(id: id, name: name, description: description);
-  }
+  // TODO
+  //Crea el canal para notificaciones
+  // createChannel(
+  // ){}
+  
 
   show({required String title, required String body}) =>
       _manager.showNotification(channel: _channel, title: title, body: body);

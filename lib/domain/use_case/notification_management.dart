@@ -4,14 +4,15 @@ import 'package:misiontic_template/data/services/notification.dart';
 class NotificationManager {
   final _service = NotificationService();
 
-  initialize() async {
-    await _service.initialize();
-  }
+  // TODO
+  //Inicializa el pluggin de notificaciones
+  // initialize() async {  }
 
-  NotificationDetails  createChannel(
-      {required String id, required String name, required String description}) {
-    return _service.createChannel(id: id, name: name, description: description);
-  }
+
+  // TODO
+  //Crea el canal para notificaciones
+  // NotificationDetails  createChannel();
+  
 
   void showNotification(
       {required NotificationDetails channel,
